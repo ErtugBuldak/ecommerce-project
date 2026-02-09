@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 3a</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function CounterButton() {
+        function handleClick() {
+          console.log("Clicked");
+        }
+
+        return (
+          <button
+            onClick={handleClick}
+          >
+            Clicked 0 times
+          </button>
+        );
+      }
+
+      function App() {
+        return (
+          <CounterButton />
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

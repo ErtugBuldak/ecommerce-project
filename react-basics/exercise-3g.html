@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 3g</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function NameInput() {
+        const [name, setName] = React.useState('');
+
+        function saveName(event) {
+          setName(event.target.value);
+        }
+
+        return (
+          <>
+            <input
+              placeholder="Type a name here"
+              size="30"
+              onChange={saveName}
+              value={name}
+            />
+            <p>Hello {name}</p>
+          </>
+        );
+      }
+
+      function App() {
+        return (
+          <NameInput />
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
