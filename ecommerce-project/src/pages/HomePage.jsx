@@ -5,6 +5,7 @@ function HomePage() {
   return (
     <>
       <title>Ecommerce Project</title>
+      <link rel="icon" type="image/svg+xml" href="home-fav  icon.png" />
 
       <Header />
 
