@@ -4,7 +4,7 @@ import Logo from '../../assets/images/logo.png'
 import MobileLogo from '../../assets/images/mobile-logo.png'
 import './CheckoutHeader.css';
 
-function CheckoutHeader({ cart }) {
+function CheckoutHeader() {
   return (
     <div className="checkout-header">
       <div className="header-content">
