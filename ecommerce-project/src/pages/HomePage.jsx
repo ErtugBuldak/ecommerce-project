@@ -1,9 +1,17 @@
-import Header from '../components/Header'
-import { products } from '../../starting-code/data/products'
-import Checkmark from '../assets/images/icons/checkmark.png'
-import './HomePage.css'
+import Header from "../components/Header";
+import { products } from "../../starting-code/data/products";
+import Checkmark from "../assets/images/icons/checkmark.png";
+import "./HomePage.css";
 
 function HomePage() {
+  fetch("http://localhost:3000/api/products")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+
   return (
     <>
       <title>Ecommerce Project</title>
@@ -17,8 +25,7 @@ function HomePage() {
             return (
               <div key={product.id} className="product-container">
                 <div className="product-image-container">
-                  <img className="product-image"
-                    src={product.image} />
+                  <img className="product-image" src={product.image} />
                 </div>
 
                 <div className="product-name limit-text-to-2-lines">
@@ -26,8 +33,10 @@ function HomePage() {
                 </div>
 
                 <div className="product-rating-container">
-                  <img className="product-rating-stars"
-                    src={`images/ratings/rating-${product.rating.stars*10}.png`} />
+                  <img
+                    className="product-rating-stars"
+                    src={`images/ratings/rating-${product.rating.stars * 10}.png`}
+                  />
                   <div className="product-rating-count link-primary">
                     {product.rating.count}
                   </div>
@@ -55,7 +64,7 @@ function HomePage() {
                 <div className="product-spacer"></div>
 
                 <div className="added-to-cart">
-                  <img src={ Checkmark } />
+                  <img src={Checkmark} />
                   Added
                 </div>
 
@@ -63,7 +72,8 @@ function HomePage() {
                   Add to Cart
                 </button>
               </div>
-            )})}
+            );
+          })}
         </div>
       </div>
     </>
