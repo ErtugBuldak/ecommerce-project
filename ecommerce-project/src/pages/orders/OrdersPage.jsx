@@ -1,15 +1,15 @@
 import { Link } from 'react-router'
-import Header from '../components/Header'
-import BuyAgain from '../assets/images/icons/buy-again.png'
+import Header from '../../components/Header'
+import BuyAgain from '../../assets/images/icons/buy-again.png'
 import './OrdersPage.css'
 
-function OrdersPage() {
+function OrdersPage({ cart }) {
   return (
     <>
       <title>Orders</title>
       <link rel="icon" type="image/svg+xml" href="orders-favicon.png" />
 
-      <Header />
+      <Header cart={cart} />
 
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
