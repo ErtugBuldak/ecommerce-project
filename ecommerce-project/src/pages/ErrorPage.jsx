@@ -1,18 +1,19 @@
-import Header from '../components/Header'
-import './ErrorPage.css'
+import Header from '../components/Header';
+import './ErrorPage.css';
 
-function ErrorPage() {
+function ErrorPage({ cart }) {
   return (
     <>
-      <title>Page Not Found</title>
+      <title>404 Page Not Found</title>
+      <link rel="icon" type="image/svg+xml" href="home-favicon.png" />
 
-      <Header />
+      <Header cart={cart} />
 
-      <div>
-        Page Not Found
+      <div className="error-message">
+        Page not found
       </div>
     </>
-  )
+  );
 }
 
 export default ErrorPage
