@@ -4,7 +4,12 @@ import Logo from '../../assets/images/logo.png'
 import MobileLogo from '../../assets/images/mobile-logo.png'
 import './CheckoutHeader.css';
 
-function CheckoutHeader() {
+function CheckoutHeader({ cart }) {
+  let totalQuantity = 0;
+  cart.forEach((cartItem) => {
+    totalQuantity += cartItem.quantity;
+  })
+
   return (
     <div className="checkout-header">
       <div className="header-content">
@@ -17,7 +22,7 @@ function CheckoutHeader() {
 
         <div className="checkout-header-middle-section">
           Checkout (<Link className="return-to-home-link"
-            to="/">3 items</Link>)
+            to="/">{totalQuantity} Item{totalQuantity > 1 && "s"}</Link>)
         </div>
 
         <div className="checkout-header-right-section">
