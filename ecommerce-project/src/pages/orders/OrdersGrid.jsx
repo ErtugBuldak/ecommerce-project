@@ -7,9 +7,9 @@ function OrdersGrid({ orders }) {
       {orders.map((order) => {
         return (
           <div className="order-container">
-            <OrderHeader order={order} />
+            <OrderHeader key={order.id} order={order} />
 
-            <OrderDetailsGrid order={order} />
+            <OrderDetailsGrid key={order.id} order={order} />
           </div>
         );
       })}
