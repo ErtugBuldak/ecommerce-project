@@ -9,7 +9,7 @@ function OrdersPage({ cart }) {
 
   useEffect(() => {
     const getOrderData = async () => {
-      const response = await axios.get('http://localhost:3000/api/orders?expand=products');
+      const response = await axios.get('/api/orders?expand=products');
       setOrders(response.data);
     }
 
