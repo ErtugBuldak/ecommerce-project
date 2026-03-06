@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import { useState } from 'react'
 import LogoWhite from '../assets/images/logo-white.png'
 import MobileLogoWhite from '../assets/images/mobile-logo-white.png'
@@ -7,6 +7,7 @@ import CartIcon from '../assets/images/icons/cart-icon.png'
 import './Header.css'
 
 function Header({ cart }) {
+  const navigate = useNavigate();
   const [searchText, setSearchText] = useState('');
 
   let totalQuantity = 0;
@@ -28,7 +29,7 @@ function Header({ cart }) {
       <div className="middle-section">
         <input className="search-bar" type="text" placeholder="Search" value={searchText} onChange={(event) => {setSearchText(event.target.value)}} />
 
-        <button className="search-button" onClick={() => {console.log(searchText)}}>
+        <button className="search-button" onClick={() => {navigate(`/?search=${searchText}`)}}>
           <img className="search-icon" src={ SearchIcon } />
         </button>
       </div>
