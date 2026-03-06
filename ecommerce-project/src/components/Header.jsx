@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router'
+import { NavLink, useNavigate, useSearchParams } from 'react-router'
 import { useState } from 'react'
 import LogoWhite from '../assets/images/logo-white.png'
 import MobileLogoWhite from '../assets/images/mobile-logo-white.png'
@@ -8,7 +8,10 @@ import './Header.css'
 
 function Header({ cart }) {
   const navigate = useNavigate();
-  const [searchText, setSearchText] = useState('');
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get('search')
+  console.log(search);
+  const [searchText, setSearchText] = useState(search || '');
 
   let totalQuantity = 0;
   cart.forEach((cartItem) => {
@@ -17,7 +20,7 @@ function Header({ cart }) {
 
   return (
     <div className="header">
-      <div className="left-section">
+      <div className="left-section" onClick={() => {setSearchText('')}}>
         <NavLink to="/" className="header-link">
           <img className="logo"
             src={ LogoWhite } />
