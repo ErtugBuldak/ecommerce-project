@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { Fragment } from 'react';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import BuyAgain from '../../assets/images/icons/buy-again.png'
@@ -16,7 +17,7 @@ function OrderDetailsGrid({ order, loadCart }) {
         }
 
         return (
-          <>
+          <Fragment key={product.productId}>
             <div className="product-image-container">
               <img src={product.product.image} />
             </div>
@@ -44,7 +45,7 @@ function OrderDetailsGrid({ order, loadCart }) {
                 </button>
               </Link>
             </div>
-          </>
+          </Fragment>
         );
       })}
     </div>

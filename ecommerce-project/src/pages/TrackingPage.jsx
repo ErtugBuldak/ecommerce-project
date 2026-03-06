@@ -19,7 +19,6 @@ function TrackingPage({ cart }) {
 
 
   if (!order) {
-    console.log("anayin");
     return null;
   }
 
