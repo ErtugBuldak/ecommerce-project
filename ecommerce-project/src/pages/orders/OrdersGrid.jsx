@@ -6,10 +6,10 @@ function OrdersGrid({ orders, loadCart }) {
     <div className="orders-grid">
       {orders.map((order) => {
         return (
-          <div className="order-container">
-            <OrderHeader key={order.id + "h"} order={order} />
+          <div key={order.id} className="order-container">
+            <OrderHeader order={order} />
 
-            <OrderDetailsGrid key={order.id + "g"} order={order} loadCart={loadCart} />
+            <OrderDetailsGrid order={order} loadCart={loadCart} />
           </div>
         );
       })}
