@@ -92,6 +92,10 @@
   }
 }
 
+.quantity-input {
+  width: 50px;
+}
+
 .checkout-page .product-image {
   max-width: 100%;
   max-height: 120px;
