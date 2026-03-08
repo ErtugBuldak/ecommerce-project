@@ -9,7 +9,7 @@ function ErrorPage({ cart }) {
 
       <Header cart={cart} />
 
-      <div className="error-message">
+      <div className="error-message" data-testid="error-message">
         Page not found
       </div>
     </>

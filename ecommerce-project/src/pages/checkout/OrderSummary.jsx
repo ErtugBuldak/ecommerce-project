@@ -9,7 +9,7 @@ function OrderSummary({ cart, deliveryOptions, loadCart }) {
         cart.map((cartItem) => {
 
           return (
-            <div key={cartItem.id} className="cart-item-container">
+            <div key={cartItem.id} className="cart-item-container" data-testid="cart-item-container">
               <DeliveryDate cartItem={cartItem} deliveryOptions={deliveryOptions} />
 
               <div className="cart-item-details-grid">

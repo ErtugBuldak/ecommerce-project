@@ -5,7 +5,7 @@ function DeliveryDate({ cartItem, deliveryOptions }) {
     return deliveryOption.id === cartItem.deliveryOptionId;
   });
   return (
-    <div className="delivery-date">
+    <div className="delivery-date" data-testid="delivery-date">
       Delivery date:{" "}
       {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format(
         "dddd, MMMM D",

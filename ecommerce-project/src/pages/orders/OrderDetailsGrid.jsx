@@ -6,7 +6,7 @@ import BuyAgain from '../../assets/images/icons/buy-again.png'
 
 function OrderDetailsGrid({ order, loadCart }) {
   return (
-    <div className="order-details-grid">
+    <div className="order-details-grid" data-testid="order-details-grid">
       {order.products.map((product) => {
         const orderAgain = async () => {
           await axios.post('/api/cart-items',{
@@ -19,28 +19,29 @@ function OrderDetailsGrid({ order, loadCart }) {
         return (
           <Fragment key={product.productId}>
             <div className="product-image-container">
-              <img src={product.product.image} />
+              <img data-testid="product-image" src={product.product.image} />
             </div>
 
             <div className="product-details">
-              <div className="product-name">{product.product.name}</div>
-              <div className="product-delivery-date">
+              <div className="product-name" data-testid="product-name">{product.product.name}</div>
+              <div className="product-delivery-date" data-testid="product-delivery-date">
                 Arriving on:{" "}
                 {dayjs(product.estimatedDeliveryTimeMs).format("MMMM D")}
               </div>
-              <div className="product-quantity">
+              <div className="product-quantity" data-testid="product-quantity">
                 Quantity: {product.quantity}
               </div>
               <button className="buy-again-button button-primary"
+                data-testid="buy-again-button"
                 onClick={orderAgain}>
-                <img className="buy-again-icon" src={BuyAgain} />
+                <img className="buy-again-icon" data-testid="buy-again-icon" src={BuyAgain} />
                 <span className="buy-again-message">Add to Cart</span>
               </button>
             </div>
 
             <div className="product-actions">
               <Link to={`/tracking/${order.id}/${product.product.id}`}>
-                <button className="track-package-button button-secondary">
+                <button className="track-package-button button-secondary" data-testid="track-package-button">
                   Track package
                 </button>
               </Link>

@@ -34,25 +34,25 @@ function CartItemDetails({ cartItem, loadCart }) {
 
   return (
     <>
-      <img className="product-image" src={cartItem.product.image} />
+      <img className="product-image" data-testid="product-image" src={cartItem.product.image} />
 
       <div className="cart-item-details">
-        <div className="product-name">{cartItem.product.name}</div>
-        <div className="product-price">
+        <div className="product-name" data-testid="product-name" >{cartItem.product.name}</div>
+        <div className="product-price" data-testid="product-price" >
           {formatMoney(cartItem.product.priceCents)}
         </div>
         <div className="product-quantity">
           <span>
             Quantity:{isUpdatingQuantity
-            ? <input className="quantity-input" type="text" value={quantity} onChange={(event) => {setQuantity(event.target.value)}} onKeyDown={handleQuantityKeyDown} />
-            : <span className="quantity-label">{cartItem.quantity}</span>
+            ? <input className="quantity-input" data-testid="quantity-input" type="text" value={quantity} onChange={(event) => {setQuantity(event.target.value)}} onKeyDown={handleQuantityKeyDown} />
+            : <span className="quantity-label" data-testid="quantity-label" >{cartItem.quantity}</span>
             }            
           </span>
-          <span className="update-quantity-link link-primary"
+          <span className="update-quantity-link link-primary" data-testid="update-quantity-link"
             onClick={updateQuantity}>
             Update
           </span>
-          <span className="delete-quantity-link link-primary"
+          <span className="delete-quantity-link link-primary" data-testid="delete-quantity-link"
             onClick={deleteCartItem}>
             Delete
           </span>

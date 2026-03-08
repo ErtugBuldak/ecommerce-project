@@ -13,7 +13,7 @@ function PaymentSummary({ paymentSummary, loadCart }) {
   }
 
   return (
-    <div className="payment-summary">
+    <div className="payment-summary" data-testid="payment-summary">
       <div className="payment-summary-title">Payment Summary</div>
 
       {paymentSummary && (
